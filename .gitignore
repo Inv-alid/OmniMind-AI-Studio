@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build
+dist/
+build/
+src-tauri/target/
+*.egg-info/
+
+# Env & secrets
+.env
+.env.local
+*.pem
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data
+backend/data/
+*.db
+*.sqlite
+
+# Logs
+*.log
+logs/
