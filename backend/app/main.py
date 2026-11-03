@@ -21,8 +21,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(chat.router, prefix="/api/chat", tags=["chat"])
-app.include_router(models.router, prefix="/api/models", tags=["models"])
+app.include_router(chat.router_api, prefix="/api/chat", tags=["chat"])
+app.include_router(models.api, prefix="/api/models", tags=["models"])
 app.include_router(agents.router, prefix="/api/agents", tags=["agents"])
 app.include_router(rag.router, prefix="/api/rag", tags=["rag"])
 
@@ -30,7 +30,7 @@ app.include_router(rag.router, prefix="/api/rag", tags=["rag"])
 @app.on_event("startup")
 async def startup():
     logger.info("OmniMind AI Studio backend started")
-    logger.info(f"Available providers will be loaded on first request")
+    logger.info("Available providers will be loaded on first request")
 
 
 @app.get("/health")
