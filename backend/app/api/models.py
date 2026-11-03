@@ -1,12 +1,9 @@
 from fastapi import APIRouter
-from app.core.router import router
+from app.core.router import router as model_router
 
-router_api = APIRouter()
-
-# Fix naming collision
-router = router_api
+api = APIRouter()
 
 
-@router.get("/")
+@api.get("/")
 async def list_models():
-    return {"models": router.list_models()}
+    return {"models": model_router.list_models()}
